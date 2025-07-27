@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 /* eslint-disable no-empty-pattern */
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import Search from "./Search";
 
@@ -15,12 +15,13 @@ function shuffle<T>(array: T[]): T[] {
 export default function CallbackDemo({}: DemoProps) {
   const [users, setUsers] = useState(allUsers);
 
-  const handleSearch = (text: string) => {
+  const handleSearch = useCallback((text: string) => {
     console.log(users[0]);
 
     const filteredUsers = allUsers.filter((user) => user.includes(text));
     setUsers(filteredUsers);
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
