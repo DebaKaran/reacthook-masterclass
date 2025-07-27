@@ -1,10 +1,11 @@
 import "./App.css";
-import TaskInput from "./components/TaskInput";
+import MemoDemo from "./memo/MemoDemo";
 
 function App() {
   return (
     <>
-      <TaskInput />
+      {/* <TaskInput /> */}
+      <MemoDemo />
     </>
   );
 }
