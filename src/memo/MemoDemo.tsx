@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { initialItems } from "./utils";
 
@@ -15,8 +15,10 @@ const MemoDemo: React.FC<DemoProps> = ({}) => {
   const [count, setCount] = useState(0);
   const [items] = useState<Item[]>(initialItems);
 
-
-  const selectedItem = items.find((item) => item.isSelected);
+  const selectedItem = useMemo(
+    () => items.find((item) => item.isSelected),
+    [items]
+  );
 
   return (
     <div>
