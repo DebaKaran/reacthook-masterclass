@@ -1,11 +1,12 @@
 import "./App.css";
-import MemoDemo from "./memo/MemoDemo";
+import CallbackDemo from "./callback/CallbackDemo";
 
 function App() {
   return (
     <>
       {/* <TaskInput /> */}
-      <MemoDemo />
+      {/* <MemoDemo /> */}
+      <CallbackDemo />
     </>
   );
 }
