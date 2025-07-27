@@ -16,8 +16,8 @@ const MemoDemo: React.FC<DemoProps> = ({}) => {
   const [items] = useState<Item[]>(initialItems);
 
   const selectedItem = useMemo(
-    () => items.find((item) => item.isSelected),
-    [items]
+    () => items.find((item) => item.id === count),
+    [items, count] // 'items' is stable (set once via useState), but included for safety
   );
 
   return (
