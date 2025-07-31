@@ -1,12 +1,13 @@
 import "./App.css";
-import UseRefDemo from "./refUse/UseRefDemo";
+import UseRefDemo2 from "./refUse/UseRefDemo2";
 function App() {
   return (
     <>
       {/* <TaskInput /> */}
       {/* <MemoDemo /> */}
       {/* <CallbackDemo /> */}
-      <UseRefDemo />
+      {/* <UseRefDemo /> */}
+      <UseRefDemo2 />
     </>
   );
 }
