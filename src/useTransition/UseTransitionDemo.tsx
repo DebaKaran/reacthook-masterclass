@@ -8,8 +8,11 @@ type Tab = "about" | "posts" | "contacts";
 const UseTransitionDemo = () => {
   const [tab, setTab] = useState<Tab>("about");
   const [isPending, startTransition] = useTransition();
-  const selectTab = (tab: Tab) => {
-    startTransition(() => setTab(tab));
+  const selectTab = (newTab: Tab) => {
+    if (newTab === "posts") {
+      startTransition(() => setTab(tab));
+    }
+    setTab(newTab);
   };
 
   return (
@@ -42,7 +45,12 @@ const UseTransitionDemo = () => {
         </TabButton>
       </div>
       {tab === "about" && <AboutTab />}
-      {tab === "posts" && <PostsTab />}
+      {tab === "posts" &&
+        (isPending ? (
+          <div className="text-gray-500 italic">Loading Posts...</div>
+        ) : (
+          <PostsTab />
+        ))}
       {tab === "contacts" && <ContactTab />}
     </>
   );
