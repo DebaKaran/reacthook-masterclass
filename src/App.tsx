@@ -1,5 +1,6 @@
 import "./App.css";
 import UseImperativeDemo2 from "./useImperative/UseImperativeDemo2";
+import UseTransitionDemo from "./useTransition/UseTransitionDemo";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <UseRefDemo /> */}
       {/* <UseRefDemo2 /> */}
       {/* <UseImperativeDemo /> */}
-      <UseImperativeDemo2 />
+      {/* <UseImperativeDemo2 /> */}
+      <UseTransitionDemo />
     </>
   );
 }
