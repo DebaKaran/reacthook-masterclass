@@ -1,6 +1,20 @@
-import React, { useState } from "react";
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+/* eslint-disable no-empty-pattern */
 
-const Counter = () => {
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useState,
+  type Ref,
+} from "react";
+
+interface CounterProps {}
+
+export type CounterRef = {
+  reset: () => void;
+};
+
+const Counter = ({}: CounterProps, ref: Ref<CounterRef>) => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -15,6 +29,11 @@ const Counter = () => {
   const reset = () => {
     setCount(0);
   };
+
+  useImperativeHandle(ref, () => ({
+    reset,
+  }));
+
   return (
     <div>
       <h1 className="text-2xl">Count: {count}</h1>
@@ -24,4 +43,4 @@ const Counter = () => {
   );
 };
 
-export default Counter;
+export default forwardRef(Counter);
