@@ -1,5 +1,6 @@
 import "./App.css";
-import UseRefDemo2 from "./refUse/UseRefDemo2";
+import UseImperativeDemo from "./useImperative/UseImperativeDemo";
+
 function App() {
   return (
     <>
@@ -7,7 +8,8 @@ function App() {
       {/* <MemoDemo /> */}
       {/* <CallbackDemo /> */}
       {/* <UseRefDemo /> */}
-      <UseRefDemo2 />
+      {/* <UseRefDemo2 /> */}
+      <UseImperativeDemo />
     </>
   );
 }
