@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import AboutTab from "./AboutTab";
 import PostsTab from "./PostsTab";
@@ -7,8 +7,9 @@ import ContactTab from "./ContactTab";
 type Tab = "about" | "posts" | "contacts";
 const UseTransitionDemo = () => {
   const [tab, setTab] = useState<Tab>("about");
+  const [isPending, startTransition] = useTransition();
   const selectTab = (tab: Tab) => {
-    setTab(tab);
+    startTransition(() => setTab(tab));
   };
 
   return (
